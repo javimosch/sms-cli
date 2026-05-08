@@ -1,0 +1,15 @@
+{
+  "name": "sms-cli",
+  "version": "1.0.0",
+  "description": "Agent-friendly SMS CLI supporting Twilio, Vonage, MailerSend, and Clickatell",
+  "bin": {
+    "sms-cli": "./src/index.ts"
+  },
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "build": "bun build src/index.ts --compile --outfile bin/sms-cli"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}
