@@ -50,7 +50,7 @@ export function printHelpJson(): void {
           "--to": "Recipient phone number in E.164 format (required)",
           "--message": "Message body text (required)",
           "--from": "Sender phone number or ID (overrides env default)",
-          "--provider": "SMS provider: twilio|vonage|mailersend|clickatell (overrides SMS_PROVIDER env)",
+          "--provider": "SMS provider: twilio|vonage|mailersend|clickatell|telnyx (overrides SMS_PROVIDER env)",
           "--json": "Output result as JSON",
           "--no-interactive": "Disable prompts (always active in this CLI)",
         },
@@ -66,6 +66,8 @@ export function printHelpJson(): void {
           MAILERSEND_FROM: "MailerSend SMS sender number",
           CLICKATELL_API_KEY: "Clickatell API key",
           CLICKATELL_FROM: "Clickatell sender ID (optional)",
+          TELNYX_API_KEY: "Telnyx API key",
+          TELNYX_FROM: "Telnyx sender phone number",
         },
       },
       "providers list": {
@@ -99,7 +101,7 @@ export function printHelpJson(): void {
 }
 
 export function printHelp(): void {
-  process.stdout.write(`sms-cli — Send SMS via Twilio, Vonage, MailerSend, or Clickatell
+  process.stdout.write(`sms-cli — Send SMS via Twilio, Vonage, MailerSend, Clickatell, or Telnyx
 
 USAGE
   sms-cli send --to <phone> --message <text> [--provider <name>] [--from <phone>] [--json]
@@ -116,7 +118,7 @@ FLAGS
   --to              Recipient phone (E.164, e.g. +15551234567)  [required]
   --message         Message body                                 [required]
   --from            Sender phone/ID (overrides env default)
-  --provider        Provider: twilio|vonage|mailersend|clickatell
+  --provider        Provider: twilio|vonage|mailersend|clickatell|telnyx
   --json            Machine-readable JSON output
   --help-json       Print JSON schema and exit
 
@@ -132,6 +134,8 @@ ENV VARS
   MAILERSEND_FROM       MailerSend sender number
   CLICKATELL_API_KEY    Clickatell API key
   CLICKATELL_FROM       Clickatell sender ID (optional)
+  TELNYX_API_KEY        Telnyx API key
+  TELNYX_FROM           Telnyx sender phone number
 
 EXIT CODES
   0    Success
