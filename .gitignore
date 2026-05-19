@@ -3,6 +3,9 @@ bin/
 dist/
 build/
 
+# Session logs
+session.txt
+
 # Node
 node_modules/
 *.tgz
